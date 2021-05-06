@@ -1,89 +1,209 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Welcome to Firebase Hosting</title>
+<!doctype html>
+<html lang="en">
 
-    <!-- update the version number as needed -->
-    <script defer src="/__/firebase/8.5.0/firebase-app.js"></script>
-    <!-- include only the Firebase features as you need -->
-    <script defer src="/__/firebase/8.5.0/firebase-auth.js"></script>
-    <script defer src="/__/firebase/8.5.0/firebase-database.js"></script>
-    <script defer src="/__/firebase/8.5.0/firebase-firestore.js"></script>
-    <script defer src="/__/firebase/8.5.0/firebase-functions.js"></script>
-    <script defer src="/__/firebase/8.5.0/firebase-messaging.js"></script>
-    <script defer src="/__/firebase/8.5.0/firebase-storage.js"></script>
-    <script defer src="/__/firebase/8.5.0/firebase-analytics.js"></script>
-    <script defer src="/__/firebase/8.5.0/firebase-remote-config.js"></script>
-    <script defer src="/__/firebase/8.5.0/firebase-performance.js"></script>
-    <!-- 
-      initialize the SDK after all desired features are loaded, set useEmulator to false
-      to avoid connecting the SDK to running emulators.
-    -->
-    <script defer src="/__/firebase/init.js?useEmulator=true"></script>
+    <head>
+        <title>City Scoot</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+        <link rel="stylesheet" href="css/custom.css">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.0/css/all.css" integrity="sha384-lZN37f5QGtY3VHgisS14W3ExzMWZxybE1SJSEsQp9S+oqd12jhcu+A56Ebc1zFSJ" crossorigin="anonymous">
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <script src="./scripts/init-components.js"></script>
+    </head>
 
-    <style media="screen">
-      body { background: #ECEFF1; color: rgba(0,0,0,0.87); font-family: Roboto, Helvetica, Arial, sans-serif; margin: 0; padding: 0; }
-      #message { background: white; max-width: 360px; margin: 100px auto 16px; padding: 32px 24px; border-radius: 3px; }
-      #message h2 { color: #ffa100; font-weight: bold; font-size: 16px; margin: 0 0 8px; }
-      #message h1 { font-size: 22px; font-weight: 300; color: rgba(0,0,0,0.6); margin: 0 0 16px;}
-      #message p { line-height: 140%; margin: 16px 0 24px; font-size: 14px; }
-      #message a { display: block; text-align: center; background: #039be5; text-transform: uppercase; text-decoration: none; color: white; padding: 16px; border-radius: 4px; }
-      #message, #message a { box-shadow: 0 1px 3px rgba(0,0,0,0.12), 0 1px 2px rgba(0,0,0,0.24); }
-      #load { color: rgba(0,0,0,0.4); text-align: center; font-size: 13px; }
-      @media (max-width: 600px) {
-        body, #message { margin-top: 0; background: white; box-shadow: none; }
-        body { border-top: 16px solid #ffa100; }
-      }
-    </style>
-  </head>
-  <body>
-    <div id="message">
-      <h2>Welcome</h2>
-      <h1>Firebase Hosting Setup Complete</h1>
-      <p>You're seeing this because you've successfully setup Firebase Hosting. Now it's time to go build something extraordinary!</p>
-      <a target="_blank" href="https://firebase.google.com/docs/hosting/">Open Hosting Documentation</a>
-    </div>
-    <p id="load">Firebase SDK Loading&hellip;</p>
+    <body>
+        <header class="container mb-3">
+            <div class="row">
+                <div class="col">
+            <img class="float-left" src="images/city-scoot-logo.png" alt="City Scoot logo">
+            <h1 class="pt-4 clearfix">City Scoot</h1>
+                </div>
+            </div>
+            <div class="row">
+            <div class="col">
+                <!-- navbar -->
+                <nav class="navbar navbar-expand-md navbar-expand-lg navbar-dark bg-dark mt-4">
+                <button class="navbar-toggler" type="button" data-toggle="collapse"
+                    data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+                    aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto ">
+                        <li><a class="nav-link active" href="index.html">Home</a></li>
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="routes/routes.html" id="navbarDropdown"
+                                role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Tour
+                                Routes</a>
+                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                <a class="dropdown-item" href="routes/routes.html">Routes</a>
+                                <a class="dropdown-item" href="routes/my-routes.html">My Favourites</a>
+                                
+                            </div>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="guides.html">Tour Guides</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="scooters.html">Scooters</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="safety.html">Safety</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="contactus.html">Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+                <a href="login.html" id="btnloginpage" class="btn btn-outline-secondary text-light ml-2"><i class="fas fa-user"></i></a>
+                </nav>
+                
+            </div>
+                
+            </div>
+        <div class="row">
+            <div class="col">
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item active" aria-current="page">Home</li>
+            </ol>
+          </nav>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col">
+                <div class=" img-fluid w-100  mt-3" id="page-banner"></div>
+            </div>
+        </div>  
+        </header>
 
-    <script>
-      document.addEventListener('DOMContentLoaded', function() {
-        const loadEl = document.querySelector('#load');
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
-        // // The Firebase SDK is initialized and available here!
-        //
-        // firebase.auth().onAuthStateChanged(user => { });
-        // firebase.database().ref('/path/to/ref').on('value', snapshot => { });
-        // firebase.firestore().doc('/foo/bar').get().then(() => { });
-        // firebase.functions().httpsCallable('yourFunction')().then(() => { });
-        // firebase.messaging().requestPermission().then(() => { });
-        // firebase.storage().ref('/path/to/ref').getDownloadURL().then(() => { });
-        // firebase.analytics(); // call to activate
-        // firebase.analytics().logEvent('tutorial_completed');
-        // firebase.performance(); // call to activate
-        //
-        // // 🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥🔥
+       
+            
+        
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <article class="container">
+                        <h2>City Scoot</h2>
+                        <div class="row">
+                            <div class="col-lg-12">
+                                <p class="d-sm-block">CityScoot offers an eco-friendly, safe and fun way of seeing the
+                                    sights of London. We offer tours that take in most of the best-known sites and areas
+                                    of the city, including Soho, Westminster, Camden Town, Notting Hill, Hampstead
+                                    Heath, Greenwich and Wapping. We provide reliable safety-tested scooters and
+                                    helmets. All tours are led by experienced and knowledgeable guides.</p>
+                            </div>
+                        </div>
+                    </article>
 
-        try {
-          let app = firebase.app();
-          let features = [
-            'auth', 
-            'database', 
-            'firestore',
-            'functions',
-            'messaging', 
-            'storage', 
-            'analytics', 
-            'remoteConfig',
-            'performance',
-          ].filter(feature => typeof app[feature] === 'function');
-          loadEl.textContent = `Firebase SDK loaded with ${features.join(', ')}`;
-        } catch (e) {
-          console.error(e);
-          loadEl.textContent = 'Error loading the Firebase SDK, check the console.';
-        }
-      });
-    </script>
-  </body>
+                    <div class="card-deck">
+                        <div class="row text-center">
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Routes</h2>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <p class="card-text">Routes are designed to take in the highlights of
+                                            London. They are also
+                                            designed to
+                                            optimise safety. Where possible they make use of the city’s extensive
+                                            cycle
+                                            superhighways and cycle lanes.</p>
+                                        <a href="routes/routes.html"
+                                            class="btn btn-outline-secondary btn-sm">Read
+                                            More</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Guides</h2>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <p class="card-text">Our guides are handpicked for their in-depth
+                                            knowledge of London and
+                                            for their ability to communicate that knowledge effectively. They
+                                            are also trained in
+                                            road safety, first aid, and basic scooter maintenance.</p>
+                                        <a href="guides.html"
+                                            class="btn btn-outline-secondary btn-sm">Read
+                                            More</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Safety</h2>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <p class="card-text">CityScoot takes a safety-first approach to its tours. All
+                                            scooters are safety tested and regularly serviced. High
+                                            quality safety helmets are provided. Tours are scheduled for low traffic
+                                            times – typically for Sunday mornings.</p>
+                                        <a href="safety.html"
+                                            class="btn btn-outline-secondary btn-sm">Read
+                                            More</a>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-sm-6 col-lg-3">
+                                <div class="card">
+                                    <div class="card-header">
+                                        <h2 class="card-title">Scooter</h2>
+                                    </div>
+
+                                    <div class="card-body">
+                                        <p class="card-text">CityScoot uses the very latest Blast scooters. Reliable,
+                                            robust and really very nippy about town. These scooters provide
+                                            a fast, comfortable way of seeing the city without wearing out your shoes or
+                                            being cooked up on a bus</p>
+                                        <a href="scooters.html"
+                                            class="btn btn-outline-secondary btn-sm">Read
+                                            More</a>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+
+
+
+                </div>
+            </div>
+        </div>
+                    <footer class=" mt-3 border-top">
+                        <div class="container text-center">
+                            <div class="row">
+                                <div class=" col-4 d-flex justify-content-center mx-auto">
+                                    <a href="#" class=" p-3">&copy;Accessibility</a>                               
+                                </div>
+                                <div class="col-4 d-flex justify-content-center mx-auto">
+                                    <a href="#" class="text-center p-3">&copy;Privacy</a>
+                                </div>
+                                <div class="col-4 d-flex justify-content-center mx-auto">
+                                    <a href="#" class="text-center p-3">&copy;City Scoot
+                                        Group</a>
+                                </div>
+                            </div>
+                        </div>
+                    </footer>
+        
+    </body>
+
 </html>

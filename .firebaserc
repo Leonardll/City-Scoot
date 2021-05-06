@@ -1,0 +1,20 @@
+{
+  "projects": {
+    "default": "cityscoot-d6c37"
+  },
+  "targets": {
+    "cityscoot-d6c37": {
+      "hosting": {
+        "app": [
+          "myapp-app"
+        ],
+        "web-page": [
+          "hosting-web"
+        ],
+        "hosting-web": [
+          "cityscoot-d6c37"
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,100 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato&family=Open+Sans&family=Roboto+Slab&family=Source+Sans+Pro&display=swap');
+body,html{
+  height: 100%;
+}
+
+$link-color:#343a40;
+
+$primary: $link-color;
+$info: darken(#e9ecef,20%);
+
+$font-family-sans-serif:'Lato', sans-serif;
+ 
+
+  #page-banner{
+    height: 70vh;
+    width: 100%;
+    background: url(../images/city-scoot-banner.jpg) no-repeat center center;
+    background-size: cover;
+    margin-bottom: 20px;
+    background-color: #cccccc;
+  }
+  
+  @media(max-width:475px) { 
+    
+    #page-banner{
+      height: 50vh;
+    }
+    
+  }
+
+  @media(min-width:991.98px){
+    #page-banner{
+      height: 100vh;
+    }
+  }
+
+  .card {
+    position: relative;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    
+    
+  }
+
+html {overflow-y: scroll;}
+
+[data-toggle="collapse"] .fa:before {  
+	content: "\f068";
+}
+
+[data-toggle="collapse"].collapsed .fa:before {
+	content: "\f067";
+}
+
+.fa-trash, fa-sign-in-alt {
+	color: #b30000;
+}
+
+#map {
+     height: 400px;  
+     width: 100%;  
+}
+
+#statusmessage {
+	display: none;
+}
+
+textarea {
+	width: 100%;
+}
+
+.btn-primary {
+  color: #fff;
+  background-color:$link-color;
+  border-color: $link-color;
+}
+
+
+.btn-primary:hover {
+  color: #fff;
+  background-color: $link-color;
+  border-color: $link-color;
+}
+
+.alert-info {
+  color: #0c5460;
+  background-color: #e9ecef;
+  border-color: #e9ecef;
+}
+
+  
+@import"../bootstrap-4.0.0/scss/bootstrap.scss";

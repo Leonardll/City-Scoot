@@ -75,7 +75,7 @@ function getRouteDetails(){
     }
 
     if (xhr){
-        xhr.open("GET","https://titan.dcs.bbk.ac.uk/~llator01/mwafma/data/routes.json", true);
+        xhr.open("GET","https://cityscoot-d6c37.web.app/data/routes.json", true);
         xhr.send();
         xhr.onreadystatechange = displayRouteDetails;
     } else {
@@ -92,7 +92,7 @@ function displayRouteDetails(){
                 for (let i in data.routes) {
                     if (data.routes[i].routeID === params.get("routeId")){
                         dataText += "<h4 class='text-left'>" + data.routes[i].name + "</h4>" +
-					"<img src='https://titan.dcs.bbk.ac.uk/~llator01/mwafma/images/" + data.routes[i].routeImage + "' class='float-left mb-4' alt='Image of route'>" +
+					"<img src='https://cityscoot-d6c37.web.app/images/" + data.routes[i].routeImage + "' class='float-left mb-4' alt='Image of route'>" +
 					"<table class='table-responsive table-striped'><tbody><tr><th>Start Point:</th><td>" + 
 					data.routes[i].start.lat + " / " + data.routes[i].start.lng +
 					"</td></tr><tr><th>End Point:</th><td>" + 

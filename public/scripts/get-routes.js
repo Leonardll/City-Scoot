@@ -9,7 +9,7 @@ function getRoutes(){
         }
     } 
     if (xhr){
-        xhr.open("GET","https://titan.dcs.bbk.ac.uk/~llator01/mwafma/data/routes.json", true);
+        xhr.open("GET","https://cityscoot-d6c37.web.app/data/routes.json", true);
         xhr.send();
         xhr.onreadystatechange = displayRoutes;
     } else {

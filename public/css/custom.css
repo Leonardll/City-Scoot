@@ -6,7 +6,7 @@ body, html {
 #page-banner {
   height: 70vh;
   width: 100%;
-  background: url(../images/city-scoot-banner.jpg) no-repeat center center;
+  background: url(https:../images/city-scoot-banner.jpg) no-repeat center center;
   background-size: cover;
   margin-bottom: 20px;
   background-color: #cccccc;
